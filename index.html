@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankist</title>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="shortcut icon" href="./icon.png" type="image/x-icon">
+</head>
+<body class="sm:pt-7 sm:px-7 bg-linear-to-tr from-slate-950 via-teal-900 to-emerald-950 h-screen max-sm:w-full">
+    <div class="sm:space-y-17">
+        <div class=" flex justify-between max-sm:flex max-sm:flex-col max-sm:items-center max-sm:justify-between max-sm:gap-4 max-sm:p-4">
+            <p class=" sm:text-5xl font-bold text-slate-200 sm:transition-all sm:duration-1000 max-sm:text-lg max-sm:font-medium max-sm:text-center " id="welcomelabel">Log in to get started</p>
+            <img class="sm:w-15 max-sm:w-10 max-sm:h-10" src="./icon.png" alt="">
+            <form class="max-sm:flex max-sm:flex-col max-sm:items-center max-sm:gap-2 max-sm:w-full ">
+                
+                       <input type="text" id="inputusername" placeholder="user" class="sm:h-10 bg-white/10 border border-white/20 font-bold rounded-l-full text-white placeholder:text-white/60 focus:outline-none text-center sm:w-35 rounded-r-full   max-sm:w-full  max-sm:px-3 max-sm:py-2 ">
+            <input type="text" id="inputuserpin" placeholder="pin" maxlength="4" class="sm:h-10 bg-white/10  border border-white/20 font-bold rounded-l-full text-white placeholder:text-white/60 focus:outline-none text-center sm:w-35 rounded-r-full max-sm:w-full  max-sm:px-3 max-sm:py-2 "> 
+            
+                
+              <button class="font-bold text-5xl text-white hover:text-teal-300 transition-colors   " id="loginbotton">→</button>
+            </form>
+          
+        </div>
+
+        <!-- ///main -->
+        <main class="sm:px-50 sm:space-y-8 opacity-0 transition-all duration-3000 max-sm:w-full  max-sm:px-6 " id="main">
+        
+            <div class="flex justify-between">
+                <div>
+                          <span class="sm:text-3xl text-slate-200 font-bold max-sm:text-2xl">Current balance</span><br>
+                <span id="dates" class="text-slate-200">As of 05/03/2037</span>  
+                </div>
+        <div class="sm:text-5xl text-white max-sm:text-3xl" id="BALANCE">0000€</div>
+
+
+            </div>
+            <!-- all1 -->
+        <div class="sm:flex justify-between gap-6 max-sm:mt-10 ">
+            <!-- movement -->
+             <div class=" space-y-5 sm:w-[80%] ">
+                
+                <div class="bg-slate-900/60 backdrop-blur-md shadow-xl border-white/10 h-115 rounded-xl overflow-y-scroll [&::-webkit-scrollbar]:w-[6px] [&::-webkit-scrollbar-track]:bg-white/5 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-thumb]:bg-white/20 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:hover:bg-white/40  " id="movementcontainer">
+                 <div class="flex justify-between border-b-2 border-gray-300 p-5">
+                    <div class="space-x-5">
+                        <span class=" bg-[green] p-1 text-white px-3 rounded-l-full rounded-r-full ">2 Deposit</span>
+                    <span>3 DAYS AGO</span>
+                    </div>
+                    <div>
+                        4000€
+                    </div>
+                </div>
+                 <div class="flex justify-between border-b-2 border-gray-300 p-5">
+                    <div class="space-x-5">
+                        <span class=" bg-[red] p-1 text-white px-3 rounded-l-full rounded-r-full ">1 WITHDRAWAL</span>
+                    <span>24/01/2037</span>
+                    </div>
+                    <div>
+                        -378€
+                    </div>
+                </div>   
+                </div>
+                
+                <!-- payment -->
+                <div class="flex justify-between items-center">
+                    <div class="flex gap-5 max-sm:absolute max-sm:top-213">
+                        <div class="space-x-2">
+                            <span class="text-white/60 font-bold">IN</span>
+                            <span class=" sm:text-[30px] text-emerald-400 max-sm:text-2xl" id="IN">0000€</span>
+                        </div>
+                        <div class="space-x-2">
+                               <span class="text-white/60 font-bold">OUT</span>
+                            <span class="text-red-400 sm:text-[30px] max-sm:text-2xl" id="OUT">0000€</span>
+                        </div>
+                        <div class="space-x-2">
+                               <span class="text-emerald-400 font-bold">INTEREST</span>
+                            <span class="text-green-400 sm:text-[30px] max-sm:text-2xl" id="INTEREST">0000€</span>
+                        </div>
+                    </div>
+                    <div>
+                        <button id="sort" class=" font-bold  bg-white/10 hover:bg-white/20 border border-white/20 text-white transition-colors rounded-lg active:-translate-x-0.2 active:translate-y-0.5 active:shadow-[3px_3px_10px_1px] active:shadow-black/40 max-sm:absolute max-sm:top-84 max-sm:left-83 max-sm:text-[20px] ">↓SORT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-5 max-sm:mt-17">
+                   <!-- transfer money -->
+            <div class=" bg-linear-to-tr from-[#ffb003] to-[#ffcb03]  p-5 rounded-xl space-y-3 max-sm:w-full">
+                <p class="text-2xl font-bold">Transfer money</p>
+                <div class="flex gap-3.5 font-bold">
+                    <div class="text-center">
+                        <input id="transferuserinput" type="text" class="h-8 bg-black/10 rounded-[7px] text-center w-35 max-sm:w-30">
+                <p>Transfer to</p> 
+                    </div>
+                    <div class="text-center font-bold">
+                       <input id="transferuseramount" type="text" class="h-8 bg-black/10 rounded-[7px] text-center w-35 max-sm:w-30">
+                <p>Amount</p>    
+                    </div>
+                    <div>
+    <button id="transfer" class="font-bold text-2xl active:-translate-x-0.2 active:translate-y-0.5 active:shadow-[3px_3px_10px_1px] active:shadow-black/40 bg-white/65 rounded-xl w-15">→</button>                    
+                    </div>
+
+                </div>
+            </div>
+            <!-- request loan -->
+             <div class=" bg-linear-to-tr from-[#39b385] to-[#9be15d]  p-5 rounded-xl space-y-3 max-sm:w-full">
+                <p class="text-2xl font-bold">Request loan</p>
+                <div class="flex gap-3.5 font-bold">
+                    <div class="text-center">
+                        <input type="text" class="h-8 bg-black/10 rounded-[7px] text-center w-35 max-sm:w-30" id="loanamout">
+                <p>Amount</p> 
+                    </div>
+                   
+                    <div>
+    <button id="loanbtn" class="font-bold text-2xl bg-white/80 placeholder:text-slate-500 text-slate-800 rounded-xl w-15 active:-translate-x-0.2 active:translate-y-0.5 active:shadow-[3px_3px_10px_1px] active:shadow-black/40">→</button>                    
+                    </div>
+
+                </div>
+            </div>
+            <!-- close accont -->
+            <div class=" bg-linear-to-tr from-[#e52a5a] to-[#ff585f] relative  p-5 rounded-xl space-y-3 max-sm:w-full">
+                <p class="text-2xl font-bold">Close account</p>
+                <div class="flex gap-3.5 font-bold">
+                    <div class="text-center">
+                        <input id="deleteuser" type="text" class="h-8 bg-black/10 rounded-[7px] text-center w-35 max-sm:w-30">
+                <p>Confirm user</p> 
+                    </div>
+                    <div class="text-center font-bold">
+                       <input id="deletepin" type="text" class="h-8 bg-black/10 rounded-[7px] text-center w-35 max-sm:w-30">
+                <p>Confirm pin</p>    
+                    </div>
+                    <div>
+    <button id="deletebtn" class="font-bold text-2xl bg-white/65  active:-translate-x-0.2 active:translate-y-0.5 active:shadow-[3px_3px_10px_1px] active:shadow-black/40 rounded-xl w-15">→</button>                    
+                    </div>
+
+                </div>
+            </div> 
+            <div class=" sm:text-end max-sm:mt-8 max-sm:pb-6 max-sm:text-center max-sm:text-white/70 max-sm:text-2xl">
+                <span class=" text-slate-300">You will be logged out in</span>
+                <span id="timers" class="text-slate-300">05:00</span>
+            </div>
+            </div>
+        </div>
+           
+        
+        </main>
+     
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
