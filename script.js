@@ -75,7 +75,27 @@ const account4 = {
   locale: 'en-NG',
 };
 
-const accounts = [account1, account2, account3, account4];
+const account5 = {
+  owner: 'Pajoe Jchmedtmann',
+  movements: [200, 450, -400, 3000, -650,  70, 1300, 40000000],
+  interestRate: 1.2, // %
+  pin: 13579024680,
+    movementsDates: [
+    '2025-11-18T21:31:17.178Z',
+    '2025-12-23T07:42:02.383Z',
+    '2026-01-28T09:15:04.904Z',
+    '2026-04-01T10:17:24.185Z',
+    '2026-05-08T14:11:59.604Z',
+    '2026-07-03T17:01:17.194Z',
+    '2026-07-04T23:36:17.929Z',
+    '2026-07-17T11:23:36.790Z',
+  
+  ],
+  currency: 'EUR',
+  locale: 'pt-PT',
+};
+
+const accounts = [account1, account2, account3, account4,account5];
 
 const IN =document.querySelector('#IN')
 const OUT =document.querySelector('#OUT')
